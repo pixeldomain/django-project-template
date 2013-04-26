@@ -1,0 +1,7 @@
+Django==1.5.1
+Fabric==1.6.0
+djorm-ext-pgfulltext==0.8
+gunicorn==0.17.2
+psycopg2==2.4.5
+pycrypto==2.6
+chromelogger==0.3.0
