@@ -5,3 +5,4 @@ gunicorn==0.17.2
 psycopg2==2.4.5
 pycrypto==2.6
 chromelogger==0.3.0
+South==0.7.6
