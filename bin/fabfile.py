@@ -1,8 +1,19 @@
-from fabric.api import local
+from fabric.api import local, env, run
 
-projectname = "{{ project_name }}"
+
+HOSTS = ['']
+SERVER_USER = 'production'
 
 
 def startapp():
     local("sudo supervisorctl restart {{ project_name }}")
     local("sudo nginx -s reload")
+
+
+def aws():
+    env.hosts = HOSTS
+    env.user = SERVER_USER
+
+
+def aws_deploy():
+    run('cd /mnt/ebs/public_html/{{ project_name }}; git pull')
