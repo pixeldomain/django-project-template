@@ -10,10 +10,10 @@ def startapp():
     local("sudo nginx -s reload")
 
 
-def aws():
+def production():
     env.hosts = HOSTS
     env.user = SERVER_USER
 
 
-def aws_deploy():
-    run('cd /mnt/ebs/public_html/{{ project_name }}; git pull')
+def production_deploy():
+    run('cd /home/production/public_html/{{ project_name }}; git pull')
