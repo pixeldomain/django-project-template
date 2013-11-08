@@ -53,8 +53,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = '{{ project_name }}.urls'
@@ -66,13 +65,11 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'core'
 )
 
 # A sample logging configuration. The only tangible logging

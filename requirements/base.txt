@@ -1,4 +1,4 @@
-Django>=1.5.1
+Django>=1.6
 Fabric>=1.6.0
 djorm-ext-pgfulltext>=0.8
 gunicorn>=0.17.2
