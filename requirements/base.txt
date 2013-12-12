@@ -5,3 +5,4 @@ gunicorn>=0.17.2
 psycopg2>=2.4.5
 chromelogger>=0.3.0
 South>=0.7.6
+arrow>=0.4.2
