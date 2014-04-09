@@ -1,7 +1,5 @@
 .DS_Store
 *.py[co]
-settings_local.py
-gunicorn_local.sh
 .idea
 src/static/*
 src/media/*

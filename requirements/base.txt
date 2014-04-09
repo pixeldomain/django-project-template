@@ -1,8 +1,10 @@
 Django>=1.6
+python-dateutil>=2.2
 Fabric>=1.6.0
-djorm-ext-pgfulltext>=0.8
-gunicorn>=0.17.2
 psycopg2>=2.4.5
-chromelogger>=0.3.0
 South>=0.7.6
-arrow>=0.4.2
+coverage>=3.7.1
+django-jenkins>=0.15.0
+pep8>=1.4.6
+pyflakes>=0.7.3
+pylint>=1.1.0

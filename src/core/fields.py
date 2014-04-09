@@ -1,13 +1,16 @@
 import datetime
-from django.utils.timezone import utc
+from dateutil import tz
 from django.db import models
+from django.conf import settings
 try:
     from south.modelsinspector import add_introspection_rules
     add_introspection_rules([], ["^core\.fields\.DateTimeNoZoneField"])
 except ImportError:
     pass
 
+
 class DateTimeNoZoneField(models.DateTimeField):
+    """Creates a DB datetime field that is TZ naive."""
 
     description = "Date (with time and no timezone)"
 
@@ -23,7 +26,10 @@ class DateTimeNoZoneField(models.DateTimeField):
             return 'timestamp'
 
     def to_python(self, value):
-        value_aware = value
         if isinstance(value, datetime.datetime):
-            value_aware = value.replace(tzinfo=utc)
-        return super(DateTimeNoZoneField, self).to_python(value_aware)
+            value = value.replace(tzinfo=tz.gettz('UTC')).astimezone(
+                tz.gettz(settings.TIME_ZONE))
+        return super(DateTimeNoZoneField, self).to_python(value)
+
+    def get_db_prep_value(self, value, connection, prepared=False):
+        return connection.ops.value_to_db_datetime(value)
