@@ -8,3 +8,4 @@ django-jenkins>=0.15.0
 pep8>=1.4.6
 pyflakes>=0.7.3
 pylint>=1.1.0
+django-datetime-utc>=1.0.0

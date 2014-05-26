@@ -1,5 +1,5 @@
 .DS_Store
 *.py[co]
 .idea
-src/static/*
-src/media/*
+src/static
+src/media

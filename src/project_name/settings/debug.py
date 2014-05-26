@@ -15,7 +15,6 @@ DATABASES = {
 }
 
 MIDDLEWARE_CLASSES += (
-    'chromelogger.DjangoMiddleware',
     #'debug_toolbar.middleware.DebugToolbarMiddleware'
 )
 
