@@ -155,9 +155,6 @@ def sync_and_migrate():
     with cd('{0}/releases/current/src'.format(env.root_path)):
         with prefix('source {0}/{1}/bin/activate'.format(
                 VIRTUAL_ENVS, PROJECT_NAME)):
-            run('python manage.py syncdb '
-                '--noinput '
-                '--settings={0}.settings.live'.format(PROJECT_NAME))
 
             # Only show migration warnings for some reason it kicks up a fuss
             with settings(warn_only=True):
